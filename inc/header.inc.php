@@ -1,6 +1,6 @@
 <?php
 $pageTitle = $pageTitle ?? 'Welcome';
-$headerImage = $headerImage ?? 'images/cabs.png';
+$headerImage = $headerImage ?? '/images/cabs.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +15,10 @@ $headerImage = $headerImage ?? 'images/cabs.png';
         <div class="site-header__bar">
             <a class="site-header__brand" href="index.php">Convoy <span>Restaurant</span></a>
             <nav class="site-nav" aria-label="Main navigation">
-                <a href="index.php">Home</a>
-                <a href="ingredients.php">Ingredients</a>
-                <a href="menu.php">Menu</a>
+                <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
+                <a href="index.php" class="<?= $currentPage === 'index.php' ? 'active' : '' ?>">Home</a>
+                <a href="ingredients.php" class="<?= $currentPage === 'ingredients.php' ? 'active' : '' ?>">Ingredients</a>
+                <a href="menu.php" class="<?= $currentPage === 'menu.php' ? 'active' : '' ?>">Menu</a>
             </nav>
         </div>
         <div class="site-header__intro">

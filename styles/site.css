@@ -24,6 +24,12 @@ a {
   color: inherit;
 }
 
+a.active {
+  color: var(--lime);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
 .site-header {
   min-height: 390px;
   padding: 24px max(6vw, calc((100vw - 1160px) / 2));
@@ -63,6 +69,10 @@ a {
 .site-nav a {
   color: #fff;
   text-decoration: none;
+}
+
+.site-nav a.active {
+  color: var(--lime);
 }
 
 .site-nav a:hover,
